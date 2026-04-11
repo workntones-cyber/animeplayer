@@ -6,6 +6,7 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UseWPF>true</UseWPF>
+		<ApplicationIcon>app.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -15,8 +16,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="libmpv-2.dll">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    	<ApplicationIcon Include="app.ico" />
+    	<None Update="app.ico">
+      	<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 

@@ -7,6 +7,7 @@ OutputDir=C:\Users\infon\source\repos\animeplayer\installer_output
 OutputBaseFilename=AnimePlayer_Setup
 Compression=lzma
 SolidCompression=yes
+SetupIconFile=app.ico
 
 [Files]
 Source: "C:\Users\infon\source\repos\animeplayer\bin\Release\net10.0-windows\AnimePlayer.exe"; DestDir: "{app}"; Flags: ignoreversion
@@ -15,10 +16,11 @@ Source: "C:\Users\infon\source\repos\animeplayer\bin\Release\net10.0-windows\Ani
 Source: "C:\Users\infon\source\repos\animeplayer\bin\Release\net10.0-windows\LibVLCSharp.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\infon\source\repos\animeplayer\bin\Release\net10.0-windows\LibVLCSharp.WPF.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\infon\source\repos\animeplayer\bin\Release\net10.0-windows\libvlc\win-x64\*"; DestDir: "{app}\libvlc\win-x64"; Flags: ignoreversion recursesubdirs
+Source: "app.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\AnimePlayer"; Filename: "{app}\AnimePlayer.exe"
 Name: "{commondesktop}\AnimePlayer"; Filename: "{app}\AnimePlayer.exe"
 
 [Run]
-Filename: "{app}\AnimePlayer.exe"; Description: "AnimePlayer ‚ð‹N“®"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\AnimePlayer.exe"; Description: "AnimePlayer ï¿½ï¿½ï¿½Nï¿½ï¿½"; Flags: nowait postinstall skipifsilent
