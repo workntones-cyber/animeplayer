@@ -178,5 +178,16 @@ namespace AnimePlayer
             _libVLC?.Dispose();
             base.OnClosed(e);
         }
+        private void SeekBar_PreviewMouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            _isDraggingSeekBar = true;
+        }
+
+        private void SeekBar_PreviewMouseUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            _isDraggingSeekBar = false;
+            if (_mediaPlayer == null) return;
+            _mediaPlayer.Position = (float)(SeekBar.Value / 100);
+        }
     }
 }

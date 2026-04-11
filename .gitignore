@@ -3,3 +3,4 @@ obj/
 .vs/
 *.user
 *.dll
+installer_output/
