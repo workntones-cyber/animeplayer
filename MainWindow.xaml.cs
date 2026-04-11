@@ -187,7 +187,14 @@ namespace AnimePlayer
         {
             _isDraggingSeekBar = false;
             if (_mediaPlayer == null) return;
-            _mediaPlayer.Position = (float)(SeekBar.Value / 100);
+
+            // クリック位置を計算してシーク
+            var slider = (System.Windows.Controls.Slider)sender;
+            var mousePos = e.GetPosition(slider);
+            var ratio = mousePos.X / slider.ActualWidth;
+            ratio = Math.Max(0, Math.Min(1, ratio));
+            _mediaPlayer.Position = (float)ratio;
+            SeekBar.Value = ratio * 100;
         }
     }
 }
