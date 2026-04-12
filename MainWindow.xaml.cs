@@ -96,6 +96,7 @@ namespace AnimePlayer
             _mediaPlayer.Media = media;
             _mediaPlayer.Play();
             PlayPauseButton.Content = "⏸";
+            FileNameLabel.Text = FormatFileName(filePath);
         }
 
         private void PlayPauseButton_Click(object sender, RoutedEventArgs e)
@@ -195,6 +196,25 @@ namespace AnimePlayer
             ratio = Math.Max(0, Math.Min(1, ratio));
             _mediaPlayer.Position = (float)ratio;
             SeekBar.Value = ratio * 100;
+        }
+        private string FormatFileName(string filePath)
+        {
+            var name = System.IO.Path.GetFileNameWithoutExtension(filePath);
+            // [～]を削除
+            name = System.Text.RegularExpressions.Regex.Replace(name, @"\[.*?\]", "");
+            // (～)を削除
+            name = System.Text.RegularExpressions.Regex.Replace(name, @"\(.*?\)", "");
+            // 余分なスペースを整理
+            name = name.Trim();
+            return name;
+        }
+        public void OpenFileFromArg(string filePath)
+        {
+            // Loadedイベント後に実行されるよう少し待つ
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                PlayFile(filePath);
+            }), System.Windows.Threading.DispatcherPriority.Loaded);
         }
     }
 }

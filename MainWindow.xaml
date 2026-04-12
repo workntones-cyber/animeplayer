@@ -35,34 +35,44 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
                 <Button x:Name="OpenButton" Content="📂"
-                        Width="40" Height="40" Margin="5,0"
-                        Background="#444" Foreground="White"
-                        BorderThickness="0" FontSize="18"
-                        Click="OpenButton_Click"/>
-                <Button x:Name="PlayPauseButton" Content="▶"
-                        Width="40" Height="40" Margin="5,0"
-                        Background="#444" Foreground="White"
-                        BorderThickness="0" FontSize="18"
-                        Click="PlayPauseButton_Click"/>
-                <Button x:Name="StopButton" Content="⏹"
-                        Width="40" Height="40" Margin="5,0"
-                        Background="#444" Foreground="White"
-                        BorderThickness="0" FontSize="18"
-                        Click="StopButton_Click"/>
-                <TextBlock Text="🔊" Foreground="White"
-                           VerticalAlignment="Center" Margin="10,0,5,0"
-                           FontSize="16"/>
-                <Slider x:Name="VolumeBar"
-                        Width="80" VerticalAlignment="Center"
-                        Minimum="0" Maximum="100" Value="80"
-                        Foreground="#e50914"
-                        ValueChanged="VolumeBar_ValueChanged"/>
-                <TextBlock x:Name="TimeLabel"
-                           Text="00:00 / 00:00"
-                           Foreground="White"
-                           VerticalAlignment="Center"
-                           Margin="15,0,0,0"
-                           FontSize="13"/>
+                    Width="40" Height="40" Margin="5,0"
+                    Background="#444" Foreground="White"
+                    BorderThickness="0" FontSize="18"
+                    Click="OpenButton_Click"/>
+                 <Button x:Name="PlayPauseButton" Content="▶"
+                    Width="40" Height="40" Margin="5,0"
+                    Background="#444" Foreground="White"
+                    BorderThickness="0" FontSize="18"
+                    Click="PlayPauseButton_Click"/>
+                 <Button x:Name="StopButton" Content="■"
+                    Width="40" Height="40" Margin="5,0"
+                    Background="#444" Foreground="White"
+                    BorderThickness="0" FontSize="18"
+                    ToolTip="完全停止"
+                    Click="StopButton_Click"/>
+                 <TextBlock Text="🔊" Foreground="White"
+                       VerticalAlignment="Center" Margin="10,0,5,0"
+                       FontSize="16"/>
+                 <Slider x:Name="VolumeBar"
+                    Width="80" VerticalAlignment="Center"
+                    Minimum="0" Maximum="100" Value="80"
+                    Foreground="#e50914"
+                    ValueChanged="VolumeBar_ValueChanged"/>
+                 <TextBlock x:Name="TimeLabel"
+                       Text="00:00 / 00:00"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       Margin="15,0,0,0"
+                       FontSize="13"/>
+                 <TextBlock x:Name="FileNameLabel"
+                       Text=""
+                       Foreground="#aaaaaa"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Margin="15,0,10,0"
+                       FontSize="11"
+                       TextTrimming="CharacterEllipsis"
+                       MaxWidth="200"/> 
             </StackPanel>
         </Grid>
     </Grid>
