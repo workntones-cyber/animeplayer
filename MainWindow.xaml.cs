@@ -17,6 +17,7 @@ namespace AnimePlayer
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
+            StartPipeServer();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -215,6 +216,32 @@ namespace AnimePlayer
             {
                 PlayFile(filePath);
             }), System.Windows.Threading.DispatcherPriority.Loaded);
+        }
+        private void StartPipeServer()
+        {
+            System.Threading.Tasks.Task.Run(() =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        using var server = new System.IO.Pipes.NamedPipeServerStream("AnimePlayerPipe", System.IO.Pipes.PipeDirection.In);
+                        server.WaitForConnection();
+                        using var reader = new System.IO.StreamReader(server);
+                        var filePath = reader.ReadLine();
+                        if (!string.IsNullOrEmpty(filePath))
+                        {
+                            Dispatcher.Invoke(() =>
+                            {
+                                OpenFileFromArg(filePath);
+                                Activate();
+                                WindowState = WindowState.Normal;
+                            });
+                        }
+                    }
+                    catch { }
+                }
+            });
         }
     }
 }

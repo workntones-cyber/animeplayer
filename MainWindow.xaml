@@ -55,7 +55,7 @@
                        FontSize="16"/>
                  <Slider x:Name="VolumeBar"
                     Width="80" VerticalAlignment="Center"
-                    Minimum="0" Maximum="100" Value="80"
+                    Minimum="0" Maximum="100" Value="0"
                     Foreground="#e50914"
                     ValueChanged="VolumeBar_ValueChanged"/>
                  <TextBlock x:Name="TimeLabel"
