@@ -37,8 +37,8 @@ namespace AnimePlayer
                         TimeLabel.Text = "00:00 / 00:00";
                     });
                 };
+
                 InitializeTimer();
-                _mediaPlayer.Volume = (int)VolumeBar.Value;
             }
             catch (Exception ex)
             {
@@ -139,7 +139,6 @@ namespace AnimePlayer
         {
             if (_mediaPlayer == null) return;
             _mediaPlayer.Volume = (int)e.NewValue;
-            System.Diagnostics.Debug.WriteLine($"Volume set to: {(int)e.NewValue}, actual: {_mediaPlayer.Volume}");
         }
 
         private void Window_Drop(object sender, DragEventArgs e)
@@ -217,7 +216,6 @@ namespace AnimePlayer
                 PlayFile(filePath);
             }), System.Windows.Threading.DispatcherPriority.Loaded);
         }
-
         
     }
 }

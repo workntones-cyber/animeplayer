@@ -11,9 +11,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="LibVLCSharp" Version="3.8.5" />
-	  <PackageReference Include="LibVLCSharp.WPF" Version="3.8.5" />
-	  <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.18" />
+	  <PackageReference Include="LibVLCSharp" Version="3.9.6" />
+	  <PackageReference Include="LibVLCSharp.WPF" Version="3.9.6" />
+	  <PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.23" />
 	</ItemGroup>
 
 	<ItemGroup>
