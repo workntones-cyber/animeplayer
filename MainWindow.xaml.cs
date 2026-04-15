@@ -3,7 +3,6 @@ using System.Windows;
 using System.Windows.Threading;
 using Microsoft.Win32;
 using LibVLCSharp.Shared;
-using System.Drawing;
 
 namespace AnimePlayer
 {
