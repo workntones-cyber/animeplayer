@@ -139,6 +139,7 @@ namespace AnimePlayer
         {
             if (_mediaPlayer == null) return;
             _mediaPlayer.Volume = (int)e.NewValue;
+            System.Diagnostics.Debug.WriteLine($"Volume set to: {(int)e.NewValue}, actual: {_mediaPlayer.Volume}");
         }
 
         private void Window_Drop(object sender, DragEventArgs e)
