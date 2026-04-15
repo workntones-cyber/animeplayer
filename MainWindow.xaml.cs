@@ -37,7 +37,6 @@ namespace AnimePlayer
                         TimeLabel.Text = "00:00 / 00:00";
                     });
                 };
-                _mediaPlayer.Volume = 0;
                 InitializeTimer();
             }
             catch (Exception ex)
