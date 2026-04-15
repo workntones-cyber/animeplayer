@@ -38,7 +38,7 @@ namespace AnimePlayer
                     });
                 };
                 InitializeTimer();
-                _mediaPlayer.Volume = (int)VolumeBar.Value;
+                _mediaPlayer.Volume = 100;
             }
             catch (Exception ex)
             {
